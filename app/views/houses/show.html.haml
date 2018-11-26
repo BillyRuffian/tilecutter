@@ -1,0 +1,14 @@
+%p= @house.name
+
+%p Ground floor rooms
+
+%ul
+  - @house.ground_floor_rooms.each do |r|
+    %li= r.name
+
+%p Upper floor rooms
+
+%ul
+  - @house.upper_floor_rooms.each do |r|
+    %li= r.name
+

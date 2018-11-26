@@ -1,0 +1,4 @@
+
+%ul
+  - @houses.each do |h|
+    %li= link_to( h.name, house_path( h ) )

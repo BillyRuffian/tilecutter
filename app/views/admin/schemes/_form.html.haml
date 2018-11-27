@@ -1,0 +1,7 @@
+= form_for [:admin, @scheme] do |f|
+  = f.label :name
+  = f.text_field :name
+
+  = yield
+
+  = f.submit 

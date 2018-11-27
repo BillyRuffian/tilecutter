@@ -31,4 +31,4 @@ Tile.create([
   { name: 'Logwood Taupe / White', description: '1000 x 165', cost: 31.45, per_box: 6, per_square_meter: 6.25 }
 ])
 
-house.rooms.each{ |r| r.tiles = Tile.all }
+# house.rooms.each{ |r| r.tiles = Tile.all }

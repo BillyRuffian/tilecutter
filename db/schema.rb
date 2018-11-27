@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_26_165330) do
+ActiveRecord::Schema.define(version: 2018_11_27_152705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,9 +32,20 @@ ActiveRecord::Schema.define(version: 2018_11_26_165330) do
     t.index ["house_id"], name: "index_rooms_on_house_id"
   end
 
-  create_table "rooms_tiles", id: false, force: :cascade do |t|
-    t.bigint "tile_id", null: false
-    t.bigint "room_id", null: false
+  create_table "scheme_tiles", force: :cascade do |t|
+    t.decimal "ratio"
+    t.bigint "tile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "scheme_id"
+    t.string "surface"
+    t.index ["tile_id"], name: "index_scheme_tiles_on_tile_id"
+  end
+
+  create_table "schemes", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tiles", force: :cascade do |t|
@@ -48,4 +59,5 @@ ActiveRecord::Schema.define(version: 2018_11_26_165330) do
   end
 
   add_foreign_key "rooms", "houses"
+  add_foreign_key "scheme_tiles", "tiles"
 end

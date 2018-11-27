@@ -1,3 +1,8 @@
 %h1 Admin::Schemes#show
 
-= @scheme.name
+%p= @scheme.name
+
+%p= link_to 'Edit', edit_admin_scheme_path( @scheme )
+
+
+%p= link_to 'Change tile options', admin_scheme_scheme_tiles_path( @scheme )
